@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at control.v(4): object "Jump" differs only in case from object "JUMP" in the same scope File: C:/FPGA/top/control.v Line: 4
+Warning (10268): Verilog HDL information at clk_dll.v(9): always construct contains both blocking and non-blocking assignments File: C:/FPGA/top/clk_dll.v Line: 9

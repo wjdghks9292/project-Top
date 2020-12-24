@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clk_dll:U0|out_clk'
+Slack : -11.828
+TNS   : -177.950
+
+Type  : Slow 1100mV 85C Model Setup 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -9.257
+TNS   : -38.896
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -4.859
+TNS   : -98.763
+
+Type  : Slow 1100mV 85C Model Hold 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -4.400
+TNS   : -10.776
+
+Type  : Slow 1100mV 85C Model Hold 'clk_dll:U0|out_clk'
+Slack : -0.629
+TNS   : -0.629
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.468
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -3.224
+TNS   : -227.772
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.423
+TNS   : -22.646
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_dll:U0|out_clk'
+Slack : -0.394
+TNS   : -9.510
+
+Type  : Slow 1100mV 0C Model Setup 'clk_dll:U0|out_clk'
+Slack : -11.944
+TNS   : -179.776
+
+Type  : Slow 1100mV 0C Model Setup 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -8.610
+TNS   : -36.317
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -4.899
+TNS   : -96.071
+
+Type  : Slow 1100mV 0C Model Hold 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -4.440
+TNS   : -11.493
+
+Type  : Slow 1100mV 0C Model Hold 'clk_dll:U0|out_clk'
+Slack : -0.544
+TNS   : -0.544
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.460
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -3.256
+TNS   : -231.576
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.454
+TNS   : -24.538
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_dll:U0|out_clk'
+Slack : -0.394
+TNS   : -9.400
+
+Type  : Fast 1100mV 85C Model Setup 'clk_dll:U0|out_clk'
+Slack : -6.617
+TNS   : -98.578
+
+Type  : Fast 1100mV 85C Model Setup 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -6.441
+TNS   : -26.657
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -3.384
+TNS   : -45.695
+
+Type  : Fast 1100mV 85C Model Hold 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -2.394
+TNS   : -5.358
+
+Type  : Fast 1100mV 85C Model Hold 'clk_dll:U0|out_clk'
+Slack : -0.498
+TNS   : -0.505
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -2.174
+TNS   : -111.619
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.475
+TNS   : -4.208
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_dll:U0|out_clk'
+Slack : -0.041
+TNS   : -0.041
+
+Type  : Fast 1100mV 0C Model Setup 'clk_dll:U0|out_clk'
+Slack : -6.156
+TNS   : -92.062
+
+Type  : Fast 1100mV 0C Model Setup 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -5.532
+TNS   : -22.823
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -2.830
+TNS   : -37.668
+
+Type  : Fast 1100mV 0C Model Hold 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -2.246
+TNS   : -5.340
+
+Type  : Fast 1100mV 0C Model Hold 'clk_dll:U0|out_clk'
+Slack : -0.460
+TNS   : -0.473
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.238
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'single_mips:MIPS|pc:myPC|pc[0]'
+Slack : -2.174
+TNS   : -103.724
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.480
+TNS   : -4.151
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_dll:U0|out_clk'
+Slack : -0.002
+TNS   : -0.002
+
+------------------------------------------------------------

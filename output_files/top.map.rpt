@@ -1,0 +1,716 @@
+Analysis & Synthesis report for top
+Thu Dec 24 14:35:44 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Registers Packed Into Inferred Megafunctions
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0|altsyncram_ksc1:auto_generated
+ 15. Parameter Settings for User Entity Instance: single_mips:MIPS|control:myControl
+ 16. Parameter Settings for Inferred Entity Instance: single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "single_mips:MIPS|registers:myReg"
+ 19. Port Connectivity Checks: "single_mips:MIPS|shift_left2:myShift"
+ 20. Port Connectivity Checks: "single_mips:MIPS|add:myAdd1"
+ 21. Port Connectivity Checks: "single_mips:MIPS"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Dec 24 14:35:44 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; top                                         ;
+; Top-level Entity Name           ; top                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 42                                          ;
+; Total pins                      ; 44                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 1,024                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6     ;                    ;
+; Top-level entity name                                                           ; top                ; top                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Allow Any RAM Size For Recognition                                              ; On                 ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; On                 ; Off                ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                    ;
++----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path       ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
+; top.v                                  ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/top.v                                                            ;         ;
+; single_mips.v                          ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/single_mips.v                                                    ;         ;
+; sign_ex.v                              ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/sign_ex.v                                                        ;         ;
+; shift_left2.v                          ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/shift_left2.v                                                    ;         ;
+; seg7.v                                 ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/seg7.v                                                           ;         ;
+; registers.v                            ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/registers.v                                                      ;         ;
+; pc.v                                   ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/pc.v                                                             ;         ;
+; instruction_memory.v                   ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/instruction_memory.v                                             ;         ;
+; data_memory.v                          ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/data_memory.v                                                    ;         ;
+; control.v                              ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/control.v                                                        ;         ;
+; clk_dll.v                              ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/clk_dll.v                                                        ;         ;
+; aludec.v                               ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/aludec.v                                                         ;         ;
+; alu_mips.v                             ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/alu_mips.v                                                       ;         ;
+; add.v                                  ; yes             ; User Verilog HDL File                                 ; C:/FPGA/top/add.v                                                            ;         ;
+; memory.mem                             ; yes             ; Auto-Found Unspecified File                           ; C:/FPGA/top/memory.mem                                                       ;         ;
+; altsyncram.tdf                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                  ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                            ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal181.inc                         ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; a_rdenreg.inc                          ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                             ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                           ; yes             ; Megafunction                                          ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_ksc1.tdf                 ; yes             ; Auto-Generated Megafunction                           ; C:/FPGA/top/db/altsyncram_ksc1.tdf                                           ;         ;
+; db/top.ram0_registers_6989617c.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/FPGA/top/db/top.ram0_registers_6989617c.hdl.mif                           ;         ;
++----------------------------------------+-----------------+-------------------------------------------------------+------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                  ;
++---------------------------------------------+--------------------------------+
+; Resource                                    ; Usage                          ;
++---------------------------------------------+--------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 161                            ;
+;                                             ;                                ;
+; Combinational ALUT usage for logic          ; 259                            ;
+;     -- 7 input functions                    ; 6                              ;
+;     -- 6 input functions                    ; 57                             ;
+;     -- 5 input functions                    ; 17                             ;
+;     -- 4 input functions                    ; 85                             ;
+;     -- <=3 input functions                  ; 94                             ;
+;                                             ;                                ;
+; Dedicated logic registers                   ; 42                             ;
+;                                             ;                                ;
+; I/O pins                                    ; 44                             ;
+; Total MLAB memory bits                      ; 0                              ;
+; Total block memory bits                     ; 1024                           ;
+;                                             ;                                ;
+; Total DSP Blocks                            ; 0                              ;
+;                                             ;                                ;
+; Maximum fan-out node                        ; single_mips:MIPS|pc:myPC|pc[6] ;
+; Maximum fan-out                             ; 77                             ;
+; Total fan-out                               ; 1492                           ;
+; Average fan-out                             ; 3.54                           ;
++---------------------------------------------+--------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Entity Name        ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+--------------------+--------------+
+; |top                                         ; 259 (0)             ; 42 (0)                    ; 1024              ; 0          ; 44   ; 0            ; |top                                                                                      ; top                ; work         ;
+;    |clk_dll:U0|                              ; 35 (35)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |top|clk_dll:U0                                                                           ; clk_dll            ; work         ;
+;    |seg7:myseg0|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seg7:myseg0                                                                          ; seg7               ; work         ;
+;    |seg7:myseg1|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seg7:myseg1                                                                          ; seg7               ; work         ;
+;    |seg7:myseg2|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seg7:myseg2                                                                          ; seg7               ; work         ;
+;    |seg7:myseg3|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seg7:myseg3                                                                          ; seg7               ; work         ;
+;    |seg7:myseg4|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seg7:myseg4                                                                          ; seg7               ; work         ;
+;    |seg7:myseg5|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|seg7:myseg5                                                                          ; seg7               ; work         ;
+;    |single_mips:MIPS|                        ; 182 (27)            ; 16 (0)                    ; 1024              ; 0          ; 0    ; 0            ; |top|single_mips:MIPS                                                                     ; single_mips        ; work         ;
+;       |add:myAdd1|                           ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|add:myAdd1                                                          ; add                ; work         ;
+;       |add:myAdd2|                           ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|add:myAdd2                                                          ; add                ; work         ;
+;       |alu_mips:myALU|                       ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|alu_mips:myALU                                                      ; alu_mips           ; work         ;
+;       |control:myControl|                    ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|control:myControl                                                   ; control            ; work         ;
+;       |instruction_memory:myInstmem|         ; 89 (89)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|instruction_memory:myInstmem                                        ; instruction_memory ; work         ;
+;       |pc:myPC|                              ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|pc:myPC                                                             ; pc                 ; work         ;
+;       |registers:myReg|                      ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|registers:myReg                                                     ; registers          ; work         ;
+;          |altsyncram:mem_rtl_0|              ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0                                ; altsyncram         ; work         ;
+;             |altsyncram_ksc1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024              ; 0          ; 0    ; 0            ; |top|single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0|altsyncram_ksc1:auto_generated ; altsyncram_ksc1    ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                          ;
++-------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------------+
+; Name                                                                                            ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                    ;
++-------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------------+
+; single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0|altsyncram_ksc1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 32           ; 32           ; --           ; --           ; 1024 ; db/top.ram0_registers_6989617c.hdl.mif ;
++-------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+----------------------------------------+
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; single_mips:MIPS|pc:myPC|pc[16..31]    ; Lost fanout        ;
+; Total Number of Removed Registers = 16 ;                    ;
++----------------------------------------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                              ;
++---------------------------------+--------------------+-------------------------------------------------------------------+
+; Register name                   ; Reason for Removal ; Registers Removed due to This Register                            ;
++---------------------------------+--------------------+-------------------------------------------------------------------+
+; single_mips:MIPS|pc:myPC|pc[31] ; Lost Fanouts       ; single_mips:MIPS|pc:myPC|pc[30], single_mips:MIPS|pc:myPC|pc[29], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[28], single_mips:MIPS|pc:myPC|pc[27], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[26], single_mips:MIPS|pc:myPC|pc[25], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[24], single_mips:MIPS|pc:myPC|pc[23], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[22], single_mips:MIPS|pc:myPC|pc[21], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[20], single_mips:MIPS|pc:myPC|pc[19], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[18], single_mips:MIPS|pc:myPC|pc[17], ;
+;                                 ;                    ; single_mips:MIPS|pc:myPC|pc[16]                                   ;
++---------------------------------+--------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 42    ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 42    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                         ;
++--------------------------------------------------+--------------------------------------------+------+
+; Register Name                                    ; Megafunction                               ; Type ;
++--------------------------------------------------+--------------------------------------------+------+
+; single_mips:MIPS|registers:myReg|rd_data1[0..31] ; single_mips:MIPS|registers:myReg|mem_rtl_0 ; RAM  ;
++--------------------------------------------------+--------------------------------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |top|single_mips:MIPS|pc:myPC|pc[23]       ;
+; 102:1              ; 2 bits    ; 136 LEs       ; 62 LEs               ; 74 LEs                 ; Yes        ; |top|single_mips:MIPS|pc:myPC|pc[26]       ;
+; 102:1              ; 2 bits    ; 136 LEs       ; 74 LEs               ; 62 LEs                 ; Yes        ; |top|single_mips:MIPS|pc:myPC|pc[25]       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|single_mips:MIPS|newPC[0]             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|single_mips:MIPS|newPC[5]             ;
+; 5:1                ; 28 bits   ; 84 LEs        ; 84 LEs               ; 0 LEs                  ; No         ; |top|single_mips:MIPS|alu_mips:myALU|Mux28 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|single_mips:MIPS|alu_mips:myALU|Mux0  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Source assignments for single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0|altsyncram_ksc1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                            ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
++---------------------------------+--------------------+------+-----------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: single_mips:MIPS|control:myControl ;
++----------------+--------+-------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                  ;
++----------------+--------+-------------------------------------------------------+
+; R_FORMAT       ; 000000 ; Unsigned Binary                                       ;
+; LW             ; 100011 ; Unsigned Binary                                       ;
+; SW             ; 101011 ; Unsigned Binary                                       ;
+; BEQ            ; 000100 ; Unsigned Binary                                       ;
+; JUMP           ; 000010 ; Unsigned Binary                                       ;
+; ADDi           ; 001000 ; Unsigned Binary                                       ;
+; ORI            ; 001101 ; Unsigned Binary                                       ;
++----------------+--------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0 ;
++------------------------------------+----------------------------------------+--------------------------+
+; Parameter Name                     ; Value                                  ; Type                     ;
++------------------------------------+----------------------------------------+--------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                                      ; Untyped                  ;
+; AUTO_CARRY_CHAINS                  ; ON                                     ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                    ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                ; ON                                     ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                    ; IGNORE_CASCADE           ;
+; WIDTH_BYTEENA                      ; 1                                      ; Untyped                  ;
+; OPERATION_MODE                     ; ROM                                    ; Untyped                  ;
+; WIDTH_A                            ; 32                                     ; Untyped                  ;
+; WIDTHAD_A                          ; 5                                      ; Untyped                  ;
+; NUMWORDS_A                         ; 32                                     ; Untyped                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED                           ; Untyped                  ;
+; ADDRESS_ACLR_A                     ; NONE                                   ; Untyped                  ;
+; OUTDATA_ACLR_A                     ; NONE                                   ; Untyped                  ;
+; WRCONTROL_ACLR_A                   ; NONE                                   ; Untyped                  ;
+; INDATA_ACLR_A                      ; NONE                                   ; Untyped                  ;
+; BYTEENA_ACLR_A                     ; NONE                                   ; Untyped                  ;
+; WIDTH_B                            ; 1                                      ; Untyped                  ;
+; WIDTHAD_B                          ; 1                                      ; Untyped                  ;
+; NUMWORDS_B                         ; 1                                      ; Untyped                  ;
+; INDATA_REG_B                       ; CLOCK1                                 ; Untyped                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                 ; Untyped                  ;
+; RDCONTROL_REG_B                    ; CLOCK1                                 ; Untyped                  ;
+; ADDRESS_REG_B                      ; CLOCK1                                 ; Untyped                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED                           ; Untyped                  ;
+; BYTEENA_REG_B                      ; CLOCK1                                 ; Untyped                  ;
+; INDATA_ACLR_B                      ; NONE                                   ; Untyped                  ;
+; WRCONTROL_ACLR_B                   ; NONE                                   ; Untyped                  ;
+; ADDRESS_ACLR_B                     ; NONE                                   ; Untyped                  ;
+; OUTDATA_ACLR_B                     ; NONE                                   ; Untyped                  ;
+; RDCONTROL_ACLR_B                   ; NONE                                   ; Untyped                  ;
+; BYTEENA_ACLR_B                     ; NONE                                   ; Untyped                  ;
+; WIDTH_BYTEENA_A                    ; 1                                      ; Untyped                  ;
+; WIDTH_BYTEENA_B                    ; 1                                      ; Untyped                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                                   ; Untyped                  ;
+; BYTE_SIZE                          ; 8                                      ; Untyped                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                              ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                   ; Untyped                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                   ; Untyped                  ;
+; INIT_FILE                          ; db/top.ram0_registers_6989617c.hdl.mif ; Untyped                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                 ; Untyped                  ;
+; MAXIMUM_DEPTH                      ; 0                                      ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                 ; Untyped                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                 ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                 ; Untyped                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                 ; Untyped                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                        ; Untyped                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                        ; Untyped                  ;
+; ENABLE_ECC                         ; FALSE                                  ; Untyped                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                  ; Untyped                  ;
+; WIDTH_ECCSTATUS                    ; 3                                      ; Untyped                  ;
+; DEVICE_FAMILY                      ; Cyclone V                              ; Untyped                  ;
+; CBXI_PARAMETER                     ; altsyncram_ksc1                        ; Untyped                  ;
++------------------------------------+----------------------------------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                  ;
++-------------------------------------------+-------------------------------------------------------+
+; Name                                      ; Value                                                 ;
++-------------------------------------------+-------------------------------------------------------+
+; Number of entity instances                ; 1                                                     ;
+; Entity Instance                           ; single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; ROM                                                   ;
+;     -- WIDTH_A                            ; 32                                                    ;
+;     -- NUMWORDS_A                         ; 32                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                          ;
+;     -- WIDTH_B                            ; 1                                                     ;
+;     -- NUMWORDS_B                         ; 1                                                     ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                  ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                             ;
++-------------------------------------------+-------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "single_mips:MIPS|registers:myReg"                                                                                                                                                         ;
++-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                                            ;
++-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk         ; Input  ; Warning  ; Input port expression (5 bits) is wider than the input port (1 bits) it drives.  The 4 most-significant bit(s) in the expression will be dangling if they have no other fanouts.   ;
+; wt_register ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; wt_data     ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "wt_data[31..1]" will be connected to GND.                                  ;
+; RegWrite    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; rd_data2    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                           ;
++-------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "single_mips:MIPS|shift_left2:myShift"                                                                                                         ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                       ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Warning  ; Input port expression (26 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "a[31..26]" will be connected to GND. ;
+; out  ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (28 bits) it drives; bit(s) "out[31..28]" have no fanouts                    ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "single_mips:MIPS|add:myAdd1" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND              ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND              ;
+; b[2]     ; Input ; Info     ; Stuck at VCC              ;
++----------+-------+----------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "single_mips:MIPS"                                                                                                       ;
++---------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                                                  ;
++---------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; newPC[31..8]        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; PC_out_test[31..16] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; instruction_test    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; wt_data             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++---------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 42                          ;
+;     CLR               ; 17                          ;
+;     CLR SCLR          ; 25                          ;
+; arriav_lcell_comb     ; 265                         ;
+;     arith             ; 94                          ;
+;         1 data inputs ; 46                          ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 34                          ;
+;     extend            ; 6                           ;
+;         7 data inputs ; 6                           ;
+;     normal            ; 165                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 51                          ;
+;         5 data inputs ; 17                          ;
+;         6 data inputs ; 57                          ;
+; boundary_port         ; 44                          ;
+; stratixv_ram_block    ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 11.30                       ;
+; Average LUT depth     ; 6.53                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Thu Dec 24 14:35:35 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Warning (10275): Verilog HDL Module Instantiation warning at top.v(31): ignored dangling comma in List of Port Connections File: C:/FPGA/top/top.v Line: 31
+Info (12021): Found 1 design units, including 1 entities, in source file top.v
+    Info (12023): Found entity 1: top File: C:/FPGA/top/top.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file single_mips.v
+    Info (12023): Found entity 1: single_mips File: C:/FPGA/top/single_mips.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file sign_ex.v
+    Info (12023): Found entity 1: sign_ex File: C:/FPGA/top/sign_ex.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift_left2.v
+    Info (12023): Found entity 1: shift_left2 File: C:/FPGA/top/shift_left2.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file seg7.v
+    Info (12023): Found entity 1: seg7 File: C:/FPGA/top/seg7.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file registers.v
+    Info (12023): Found entity 1: registers File: C:/FPGA/top/registers.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file pc.v
+    Info (12023): Found entity 1: pc File: C:/FPGA/top/pc.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.v
+    Info (12023): Found entity 1: instruction_memory File: C:/FPGA/top/instruction_memory.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.v
+    Info (12023): Found entity 1: data_memory File: C:/FPGA/top/data_memory.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control File: C:/FPGA/top/control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file clk_dll.v
+    Info (12023): Found entity 1: clk_dll File: C:/FPGA/top/clk_dll.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file aludec.v
+    Info (12023): Found entity 1: aludec File: C:/FPGA/top/aludec.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu_mips.v
+    Info (12023): Found entity 1: alu_mips File: C:/FPGA/top/alu_mips.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file add.v
+    Info (12023): Found entity 1: add File: C:/FPGA/top/add.v Line: 1
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "clk_dll" for hierarchy "clk_dll:U0" File: C:/FPGA/top/top.v Line: 21
+Warning (10230): Verilog HDL assignment warning at clk_dll.v(19): truncated value with size 32 to match size of target (25) File: C:/FPGA/top/clk_dll.v Line: 19
+Info (12128): Elaborating entity "single_mips" for hierarchy "single_mips:MIPS" File: C:/FPGA/top/top.v Line: 31
+Info (12128): Elaborating entity "pc" for hierarchy "single_mips:MIPS|pc:myPC" File: C:/FPGA/top/single_mips.v Line: 61
+Info (12128): Elaborating entity "add" for hierarchy "single_mips:MIPS|add:myAdd1" File: C:/FPGA/top/single_mips.v Line: 67
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "single_mips:MIPS|instruction_memory:myInstmem" File: C:/FPGA/top/single_mips.v Line: 72
+Warning (10030): Net "mem[49]" at instruction_memory.v(7) has no driver or initial value, using a default initial value '0' File: C:/FPGA/top/instruction_memory.v Line: 7
+Info (12128): Elaborating entity "shift_left2" for hierarchy "single_mips:MIPS|shift_left2:myShift" File: C:/FPGA/top/single_mips.v Line: 77
+Info (12128): Elaborating entity "control" for hierarchy "single_mips:MIPS|control:myControl" File: C:/FPGA/top/single_mips.v Line: 97
+Info (12128): Elaborating entity "registers" for hierarchy "single_mips:MIPS|registers:myReg" File: C:/FPGA/top/single_mips.v Line: 107
+Info (12128): Elaborating entity "sign_ex" for hierarchy "single_mips:MIPS|sign_ex:mySignExtend" File: C:/FPGA/top/single_mips.v Line: 112
+Info (12128): Elaborating entity "aludec" for hierarchy "single_mips:MIPS|aludec:myALUcontrol" File: C:/FPGA/top/single_mips.v Line: 118
+Info (12128): Elaborating entity "alu_mips" for hierarchy "single_mips:MIPS|alu_mips:myALU" File: C:/FPGA/top/single_mips.v Line: 126
+Warning (10230): Verilog HDL assignment warning at alu_mips.v(21): truncated value with size 32 to match size of target (1) File: C:/FPGA/top/alu_mips.v Line: 21
+Info (12128): Elaborating entity "data_memory" for hierarchy "single_mips:MIPS|data_memory:myDataMem" File: C:/FPGA/top/single_mips.v Line: 134
+Warning (10235): Verilog HDL Always Construct warning at data_memory.v(18): variable "MemRead" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/FPGA/top/data_memory.v Line: 18
+Warning (10235): Verilog HDL Always Construct warning at data_memory.v(20): variable "MemWrite" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/FPGA/top/data_memory.v Line: 20
+Warning (10235): Verilog HDL Always Construct warning at data_memory.v(23): variable "rd_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/FPGA/top/data_memory.v Line: 23
+Warning (10240): Verilog HDL Always Construct warning at data_memory.v(17): inferring latch(es) for variable "rd_data", which holds its previous value in one or more paths through the always construct File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[0]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[1]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[2]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[3]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[4]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[5]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[6]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[7]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[8]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[9]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[10]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[11]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[12]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[13]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[14]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[15]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[16]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[17]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[18]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[19]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[20]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[21]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[22]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[23]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[24]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[25]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[26]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[27]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[28]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[29]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[30]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (10041): Inferred latch for "rd_data[31]" at data_memory.v(17) File: C:/FPGA/top/data_memory.v Line: 17
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:myseg0" File: C:/FPGA/top/top.v Line: 33
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "single_mips:MIPS|read_data1[31]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[30]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[29]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[28]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[27]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[26]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[25]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[24]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[23]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[22]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[21]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[20]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[19]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[18]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[17]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[16]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[15]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[14]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[13]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[12]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[11]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[10]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[9]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[8]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[7]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[6]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[5]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[4]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[3]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[2]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[1]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+    Warning (12110): Net "single_mips:MIPS|read_data1[0]" is missing source, defaulting to GND File: C:/FPGA/top/single_mips.v Line: 36
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer single_mips:MIPS|instruction_memory:myInstmem|Mux10 File: C:/FPGA/top/instruction_memory.v Line: 114
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "single_mips:MIPS|registers:myReg|mem_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 32
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_A set to NONE
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/top.ram0_registers_6989617c.hdl.mif
+Info (12130): Elaborated megafunction instantiation "single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0"
+Info (12133): Instantiated megafunction "single_mips:MIPS|registers:myReg|altsyncram:mem_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "32"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/top.ram0_registers_6989617c.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ksc1.tdf
+    Info (12023): Found entity 1: altsyncram_ksc1 File: C:/FPGA/top/db/altsyncram_ksc1.tdf Line: 27
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/FPGA/top/output_files/top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 343 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 267 logic cells
+    Info (21064): Implemented 32 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 4861 megabytes
+    Info: Processing ended: Thu Dec 24 14:35:44 2020
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:17
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/FPGA/top/output_files/top.map.smsg.
+
+
